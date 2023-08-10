@@ -3,7 +3,6 @@ import os
 
 def main ():
     while True:
-        try:
             print("Você está no banco tal, você é: \n1 - cliente\n2 - admiistrador ")
             menu = input("Digite uma das opções acima: ")
 
