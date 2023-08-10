@@ -1,3 +1,4 @@
+
 class Clientes:
     def __init__ (self, nome, rg, cep):
         self.nome = nome
@@ -5,14 +6,21 @@ class Clientes:
         self.cep = cep
 
 class Banco_Brasil:
-    def adicionar_clientes():
+
+    def __init__(self):
+        self.lista = []
+        
+    def adicionar_clientes(self, nome, rg, cep):
+        cliente = Clientes(nome, rg, cep)
+        self.lista.append(cliente)
+
+    def excluir_clientes(self):
+
+
+    def atualizar_clientes(self):
     
-    def excluir_clientes():
+    def transferência(self):
 
-    def atualizar_clientes():
-    
-    def transferência():
+    def saque(self):
 
-    def saque():
-
-    def depósito():
+    def depósito(self):
