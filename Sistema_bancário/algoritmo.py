@@ -19,6 +19,6 @@ def main ():
 
 
 
-        except Exception as erro: # Vai captar qualquer erro ou qualquer anormalidade
-		print("Um erro foi detectado. Modifique para que seu software funcione corretamente")
-		print(erro.__class.__name)
+        # except Exception as erro: # Vai captar qualquer erro ou qualquer anormalidade
+		# print("Um erro foi detectado. Modifique para que seu software funcione corretamente")
+		# print(erro.__class.__name)
