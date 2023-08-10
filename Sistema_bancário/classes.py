@@ -23,9 +23,14 @@ class Banco_Brasil:
         cliente = Clientes(nome, rg, cep)
         self._lista.append(cliente)
         
-    def excluir_clientes(self):
+    def excluir_clientes(self, nome):
         for cliente in self._lista:
-            self._lista(cliente.nome)
+            if cliente.nome == nome:
+                self._lista.pop(cliente)
+                break
+        
+
+            
 
 
         
