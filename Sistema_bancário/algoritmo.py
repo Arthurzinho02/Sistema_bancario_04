@@ -3,6 +3,8 @@ from classes import *
 def main ():
     while True:
         try:
+            print("Você está no banco tal, para entrar na sua conta, digite sue nome: ")
+            nome = input("Digite seu nome aqui:")
             
 
 
