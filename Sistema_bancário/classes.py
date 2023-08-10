@@ -17,24 +17,28 @@ class Clientes:
 class Banco_Brasil:
 
     def __init__(self):
-        self._lista = []
+        self.dicionario = {}
         
     def adicionar_clientes(self, nome, rg, cep, saldo):
         cliente = Clientes(nome, rg, cep)
-        self._lista.append(cliente)
+        self.dicionario[cliente] = saldo
         
     def excluir_clientes(self, nome):
-        for cliente in self._lista:
+        p = 0
+        for cliente in self.dicionario:
             if cliente.nome == nome:
-                self._lista.pop(cliente)
+                p = 1
+                self.dicionario.pop(cliente)
                 break
-        
-
             
+        if p != 1:
+            print("Cliente não encontrado")
 
+    def getatualizar(self, nome, rg, cep):
+        for cliente in self.dicionario:
+            if cliente.nome == nome:
+                cliente
+    
 
-        
-
-    # def atualizar_clientes(self):
     
 
