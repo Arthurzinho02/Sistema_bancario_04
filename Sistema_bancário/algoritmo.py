@@ -10,13 +10,6 @@ def adc_cliente():
     adc_saldo = float(input("Digite o saldo desejado: "))
     adc.adicionar_clientes(adc_n, adc_rg, adc_cep, adc_saldo)
 
-def excluir_c():
-    ex_c = Banco_Brasil()
-    excluir = input("Digite o nome de quem deseja excluir: ")
-    ex_c.excluir_clientes(excluir)
-
-
-
 
 # def main ():
 
