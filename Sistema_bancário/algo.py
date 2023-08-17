@@ -4,34 +4,76 @@ import os
 def Main():
     while True:
         try:
-            print("Você está no banco do Brasil")
-            print("Vocé é")
-            print("1. Cliente\n 2. Administrador")
+            print("Você está no banco do Brasil!")
+            print("Vocé é:")
+            print("1. Cliente\n2. Administrador")
             opção = int(input("Qual valor deseja? > "))
+            os.system("cls")
 
             match opção:
                 case 1:
-                    print("Esse é o Menu destinado aos Clientes'")
-                    print("1. Transferência\n 2. Saque\n 3. Depósito")
+                    print("Esse é o Menu destinado aos Clientes")
+                    print("1. Transferência\n2. Saque\n3. Depósito")
                     função = input("O que você deseja fazer? ")
+                    os.system("cls")
 
                     if função == 1:
                         print("Essa é a área de TRANSFERÊNCIA")
-                        branco = Banco_Brasil()
+                        banco = Banco_Brasil()
                         destinatário = input("Digite o nome do destinário que você deseja enviar o valor: ")
-                        branco.
+                        valor = float(input("Digite o valor que deseja transferir: "))
+                        banco.transferencia(destinatário, valor)
+                    
+                    elif função == 2:
+                        print("Essa é a área de SAQUE")
+                        banco = Banco_Brasil()
+                        valor = float(input("Digite o valor que deseja sacar: "))
+                        banco.transferencia(valor)
+                    
+                    elif função == 3:
+                        print("Essa é a área de DEPÓSITO")
+                        banco = Banco_Brasil()
+                        valor = float(input("Digite o valor que deseja depositar: "))
+                        banco.transferencia(valor)
+
+                    else:
+                        print("A opção não existe")
+                        os.system("cls")
 
                 case 2:
-                    menu_adm = Circulo(int(input("Informe o raio > ")))
-                    print(cir.calc_circo())
-                case 3:
-                    para = Paralelepipedo(int(input("Informe o Comprimento > ")), int(input("Informe a Largura > ")), int(input("Informe a Altura > ")))
-                    print(para.calc_volume())
-                case 0:
-                    print("Saindo do software")
-                    break
+                    print("Esse é o Menu destinado ao Administrador")
+                    print("1. Criar conta\n2. Excluir conta\n3. Atualizar dados")
+                    função = input("O que você deseja fazer? ")
+                    os.system("cls")
+
+                    if função == 1:
+                        print("Essa é a área de CRIAR CONTA")
+                        banco = Banco_Brasil()
+                        nome = input("Nome do usuário: ")
+                        rg = int("RG: ")
+                        cep = int("CEP: ")
+                        saldo = 0
+                        banco.excluir_clientes(nome, rg, cep, saldo)
+                    
+                    elif função == 2:
+                        print("Essa é a área de EXCLUIR CONTA")
+                        banco = Banco_Brasil()
+                        conta = input("Qual conta você deseja excluir? ")
+                        banco.excluir_clientes(conta)
+                    
+                    elif função == 3:
+                        print("Essa é a área de ATUALIZAR DADOS")
+                        banco = Banco_Brasil()
+                        conta = input("Qual conta você deseja atualizar? ")
+                        banco.atualizar(conta)
+
+                    else:
+                        print("A opção não existe")
+                        os.system("cls")
+
                 case _:
-                    print("Opção Invalida")  
+                    print("Opção Invalida")
+
         except Exception as erro:
             print("Valor invalido")
             print(erro.__class__.__name__)
