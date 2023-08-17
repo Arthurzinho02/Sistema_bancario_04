@@ -131,7 +131,7 @@ class Banco_Brasil:
             if chave == id:
                 p = 1
                 if valor.saldo >= 0 and x <= valor.saldo:    
-                    self.dicionario[cliente] = self.dicionario[cliente] - x
+                    valor.saldo = valor.saldo - x
                     q = 0
                     for chave, valor in self.dicionario:
                         if chave == id_t:
