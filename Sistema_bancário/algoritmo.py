@@ -1,20 +1,29 @@
 from classes import *
 import os 
 
-def adc_cliente():
-    adc = Banco_Brasil()
-    print()
-    adc_n = input("Digite o nome do cliente que deseja adicionar: ")
-    adc_rg = int(input("Digite o número do rg que deseja adicionar (sem caracteres): "))
-    adc_cep = int(input("Digite o número do cep que deseja adicionar (sem caracteres): "))
-    adc_saldo = float(input("Digite o saldo desejado: "))
-    adc.adicionar_clientes(adc_n, adc_rg, adc_cep, adc_saldo)
+def main():
+    while True:
+        try:
+            
+          print("Você está no banco do Brasil, você é: \n1 - cliente\n2 - admiistrador ")
+          print()
 
 
-def exc_c():
-    excluir = Banco_Brasil()
-    nome = input("Digite o nome do cliente que deseja excuir dos dados bancários")
-    excluir.excluir_clientes(nome)
+            
+
+# def adc_cliente():
+#     adc = Banco_Brasil()
+#     print()
+#     adc_n = input("Digite o nome do cliente que deseja adicionar: ")
+#     adc_rg = int(input("Digite o número do rg que deseja adicionar (sem caracteres): "))
+#     adc_cep = int(input("Digite o número do cep que deseja adicionar (sem caracteres): "))
+#     adc.adicionar_clientes(adc_n, adc_rg, adc_cep)
+
+
+# def exc_c():
+#     excluir = Banco_Brasil()
+#     nome = input("Digite o nome do cliente que deseja excuir dos dados bancários")
+#     excluir.excluir_clientes(nome)
     
 
 # def main ():
