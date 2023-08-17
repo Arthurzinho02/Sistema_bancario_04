@@ -2,22 +2,11 @@ from classes import *
 import os 
 
 def main ():
-    while True:
-            try:
-               print("Você está no banco tal, você é: \n1 - cliente\n2 - admiistrador ")
                
                def menu_p():
                     input("Digite uma das opções acima: ")
 
-                    if menu_p == 1:
-                         print("Você entrou em clientes, entre na sua conta: ")
-                         os.system("pause")
-                         os.system("cls")
 
-                    elif menu_p == 2:
-                         print("você entrou em administrador, oq que deseja fazer?")
-                         os.system("pause")
-                         os.system("cls")
 
                print ("Você entrou na opção cliente, o que deseja realizar? \n1 - Transferência entre clientes\n2 - Saque\n3 - Depósito ")
                
