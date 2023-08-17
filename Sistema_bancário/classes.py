@@ -71,6 +71,25 @@ class Banco_Brasil:
         if p != 1:
             print("Cliente não encontrado")
 
+    def getcep(self, cep):
+        p = 0
+        for cliente in self.dicionario:
+            if cliente.cep == cep:
+                p = 1
+                return cliente.cep
+        if p != 1:
+            print("Cliente não encontrado")
+
+
+    def setcep(self, cep, x):
+        p = 0
+        for cliente in self.dicionario:
+            if cliente.cep == cep:
+                p = 1
+                cliente.cep = x
+        if p != 1:
+            print("Cliente não encontrado")
+
 
     
 
