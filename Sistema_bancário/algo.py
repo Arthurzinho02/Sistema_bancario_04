@@ -65,6 +65,27 @@ def Main():
                     else:
                         print("A opção não existe")
                         os.system("cls")
+                case 3:
+
+                    print("Essa é a área de ATUALIZAR DADOS\nO que você deseja atualizar?\n 1 - nome\n2 - RG\n3 - cep")
+                    função = input("Digite o que será realizado: ")
+
+                    if função == "1":
+                        input("Digite o nome do cliente")
+                        banco.atualizar(conta)
+
+                    elif função == "2":
+                        input("Digite o RG")
+                        banco.atualizar(conta)
+
+                    elif função == "3":
+                        input("Digite o cep")
+                        banco.atualizar(conta)
+
+
+                    else:
+                        print("A opção não existe")
+                        os.system("cls")
 
                 case _:
                     print("Opção Invalida")
