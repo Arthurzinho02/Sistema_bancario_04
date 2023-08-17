@@ -57,31 +57,25 @@ def Main():
                         conta = int(input("Qual conta você deseja excluir? "))
                         banco.excluir_clientes(conta)
                     
-                    elif função == "3":
-                        print("Essa é a área de ATUALIZAR DADOS")
-                        conta = input("Qual conta você deseja atualizar? ")
+                    if função == "3":
+                        print("Essa é a área de ATUALIZAR DADOS\nO que você deseja atualizar?\n1 - Nome\n2 - RG\n3 - Cep")
+                        conta = input("Qual item você deseja atualizar? ")
                         banco.autalizar(conta)
 
-                    else:
-                        print("A opção não existe")
-                        os.system("cls")
-                case 3:
+                        if função == 1:
+                            NOME = input("Digite um novo nome")
+                            banco.setnome(conta, NOME)
 
-                    print("Essa é a área de ATUALIZAR DADOS\nO que você deseja atualizar?\n 1 - nome\n2 - RG\n3 - cep")
-                    função = input("Digite o que será realizado: ")
+                        elif função == "2":
+                            RG = input("Digite um novo RG")
+                            banco.setrg(conta, RG)
 
-                    if função == "1":
-                        input("Digite o nome do cliente")
-                        banco.atualizar(conta)
-
-                    elif função == "2":
-                        input("Digite o RG")
-                        banco.atualizar(conta)
-
-                    elif função == "3":
-                        input("Digite o cep")
-                        banco.atualizar(conta)
-
+                        elif função == "3":
+                            CEP = input("Digite um novo cep")
+                            banco.setcep(conta, CEP)
+                        
+                        else:
+                            print("A opção não existe")
 
                     else:
                         print("A opção não existe")
