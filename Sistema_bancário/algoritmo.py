@@ -1,32 +1,55 @@
 from classes import *
 import os 
 
+def adc_cliente():
+    adc = Banco_Brasil()
+    print()
+    adc_n = input("Digite o nome do cliente que deseja adicionar: ")
+    adc_rg = 
+    adc_cep = 
+    adc_saldo =
+
 def main ():
+
+#     while True:
+#             try:
+
+#                print("Você está no banco tal, você é: \n1 - cliente\n2 - admiistrador ")
+#                print()
+
+#                def menu_p():
+#                     input("Digite uma das opções acima: ")
+
+#                     if menu_p == 1:
+#                          print("Você entrou em clientes, entre na sua conta: ")
+#                          os.system("pause")
+#                          os.system("cls")
+
+#                     elif menu_p == 2:
+#                          print("você entrou em administrador, oq que deseja fazer?")
+#                          os.system("pause")
+#                          os.system("cls")
+
+               # print ("Você entrou na opção cliente, o que deseja realizar? \n1 - Transferência entre clientes\n2 - Saque\n3 - Depósito ")
                
-               def menu_p():
-                    input("Digite uma das opções acima: ")
+               # def menu_c():
+               #      input ("Digite o que precisa ser realizado: ")
 
+               #      if menu_c == 1:
+               #           print ("Você entrou em Tranferência entre clientes, digite qual valor será transferido: ")
+               #           os.system("pause")
 
+               #      elif menu_c == 2:
+               #           print ("Você está em Saque, digite o valor que deseja retirar: ")
+               #           os.system("pause")
 
-               print ("Você entrou na opção cliente, o que deseja realizar? \n1 - Transferência entre clientes\n2 - Saque\n3 - Depósito ")
-               
-               def menu_c():
-                    input ("Digite o que precisa ser realizado: ")
+               #      elif menu_c == 3:
+               #           print("Você entrou em Depósitos, digite a quantia que deseja depositar: ")
+               #           os.system("pause")
+          #      break
 
-                    if menu_c == 1:
-                         print ("Você entrou em Tranferência entre clientes, digite qual valor será transferido: ")
-                         os.system("pause")
-
-                    elif menu_c == 2:
-                         print ("Você está em Saque, digite o valor que deseja retirar: ")
-                         os.system("pause")
-
-                    elif menu_c == 3:
-                         print("Você entrou em Depósitos, digite a quantia que deseja depositar: ")
-                    
-                    elif menu_c == 4:
-                         print("Saindo do programa.")
-                         break
+          #   except Exception:
+          #      print ("Problema encontrado")
      
 
 
