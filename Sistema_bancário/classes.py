@@ -19,7 +19,7 @@ class Banco_Brasil:
         
     def excluir_clientes(self, id):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 self.dicionario.pop(chave)
@@ -31,7 +31,7 @@ class Banco_Brasil:
 
     def getnome(self, id):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 return valor.nome
@@ -40,7 +40,7 @@ class Banco_Brasil:
     
     def setnome(self, id, x):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 valor.nome = x
@@ -51,7 +51,7 @@ class Banco_Brasil:
         
     def getrg(self, id):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 return valor.rg
@@ -61,7 +61,7 @@ class Banco_Brasil:
 
     def setrg(self, id, x):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 valor.rg = x
@@ -72,7 +72,7 @@ class Banco_Brasil:
 
     def getcep(self, id):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 return valor.cep
@@ -82,7 +82,7 @@ class Banco_Brasil:
 
     def setcep(self, id, x):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 valor.cep = x
@@ -93,7 +93,7 @@ class Banco_Brasil:
 
     def getsaldo(self, id):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 return valor.saldo
@@ -102,7 +102,7 @@ class Banco_Brasil:
 
     def depósito(self, id, x):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 valor.saldo = valor.saldo + x
@@ -113,7 +113,7 @@ class Banco_Brasil:
 
     def saque(self,id, x):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 if valor.saldo >= 0 and x <= valor.saldo:    
@@ -127,13 +127,13 @@ class Banco_Brasil:
         
     def transferencia(self, id, id_t , x):
         p = 0
-        for chave, valor in self.dicionario:
+        for chave, valor in self.dicionario():
             if chave == id:
                 p = 1
                 if valor.saldo >= 0 and x <= valor.saldo:    
                     valor.saldo = valor.saldo - x
                     q = 0
-                    for chave, valor in self.dicionario:
+                    for chave, valor in self.dicionario():
                         if chave == id_t:
                             q = 1
                             valor.saldo = valor.saldo + x
