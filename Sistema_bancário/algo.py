@@ -60,7 +60,7 @@ def Main():
                     elif função == "3":
                         print("Essa é a área de ATUALIZAR DADOS")
                         conta = input("Qual conta você deseja atualizar? ")
-                        banco.atualizar(conta)
+                        banco.autalizar(conta)
 
                     else:
                         print("A opção não existe")
