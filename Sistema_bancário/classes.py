@@ -35,12 +35,18 @@ class Banco_Brasil:
             print("Cliente não encontrado")
 
     def getnome(self, nome):
+        p = 0
         for cliente in self.dicionario:
             if cliente.nome == nome:
-                cliente
+                p = 1
+                return cliente.nome
+        if p != 1:
+            print("Cliente não encontrado")
     
-    def setnome(self,nome):
-        
+    def setnome(self,nome, x):
+        for cliente in self.dicionario:
+            if cliente.nome == nome:
+                cliente.nome = x
         
     
 
