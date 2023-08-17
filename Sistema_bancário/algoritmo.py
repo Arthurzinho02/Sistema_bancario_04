@@ -5,11 +5,20 @@ def adc_cliente():
     adc = Banco_Brasil()
     print()
     adc_n = input("Digite o nome do cliente que deseja adicionar: ")
-    adc_rg = 
-    adc_cep = 
-    adc_saldo =
+    adc_rg = int(input("Digite o número do rg que deseja adicionar (sem caracteres): "))
+    adc_cep = int(input("Digite o número do cep que deseja adicionar (sem caracteres): "))
+    adc_saldo = float(input("Digite o saldo desejado: "))
+    adc.adicionar_clientes(adc_n, adc_rg, adc_cep, adc_saldo)
 
-def main ():
+def excluir_c():
+    ex_c = Banco_Brasil()
+    excluir = input("Digite o nome de quem deseja excluir: ")
+    ex_c.excluir_clientes(excluir)
+
+
+
+
+# def main ():
 
 #     while True:
 #             try:
@@ -60,5 +69,5 @@ def main ():
 
 
         # except Exception as erro: # Vai captar qualquer erro ou qualquer anormalidade
-		# print("Um erro foi detectado. Modifique para que seu software funcione corretamente")
-		# print(erro.__class.__name)
+	# print("Um erro foi detectado. Modifique para que seu software funcione corretamente")
+	# print(erro.__class.__name)
