@@ -1,4 +1,4 @@
-
+import random
 class Clientes:
     def __init__ (self, nome, rg, cep, saldo):
         self.nome = nome
@@ -13,101 +13,102 @@ class Banco_Brasil:
         self.dicionario = {}
         
     def adicionar_clientes(self, nome, rg, cep, saldo):
-        cliente = Clientes(nome, rg, cep)
-        self.dicionario[cliente] = saldo
-        print (f"{nome} adicionado")
+        cliente = Clientes(nome, rg, cep, saldo)
+        id = random.randint(100,500)
+        self.dicionario[id] = cliente
+        print (f"{nome} adicionado, o id é {id}")
         
-    def excluir_clientes(self, nome):
+    def excluir_clientes(self, id):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.nome == nome:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                self.dicionario.pop(cliente)
-                print(f"{cliente.nome} excluido")
+                self.dicionario.pop(chave)
+                print(f"{valor.nome} excluido")
                 break
             
         if p != 1:
             print("Cliente não encontrado")
 
-    def getnome(self, nome):
+    def getnome(self, id):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.nome == nome:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                return cliente.nome
+                return valor.nome
         if p != 1:
             print("Cliente não encontrado")
     
-    def setnome(self,nome, x):
+    def setnome(self, id, x):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.nome == nome:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                cliente.nome = x
-                print(f"O nome novo é {cliente.nome}")
+                valor.nome = x
+                print(f"O nome novo é {valor.nome}")
                 break
         if p != 1:
             print("Cliente não encontrado")
         
-    def getrg(self, rg):
+    def getrg(self, id):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.rg == rg:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                return cliente.rg
+                return valor.rg
         if p != 1:
             print("Cliente não encontrado")
 
 
-    def setrg(self, rg, x):
+    def setrg(self, id, x):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.rg == rg:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                cliente.rg = x
-                print(f"O RG novo é {cliente.rg}")
+                valor.rg = x
+                print(f"O RG novo é {valor.rg}")
                 break
         if p != 1:
             print("Cliente não encontrado")
 
-    def getcep(self, cep):
+    def getcep(self, id):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.cep == cep:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                return cliente.cep
+                return valor.cep
         if p != 1:
             print("Cliente não encontrado")
 
 
-    def setcep(self, cep, x):
+    def setcep(self, id, x):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.cep == cep:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                cliente.cep = x
-                print(f"O CEP novo é {cliente.cep}")
+                valor.cep = x
+                print(f"O CEP novo é {valor.cep}")
                 break
         if p != 1:
             print("Cliente não encontrado")
 
 
-    def getsaldo(self, nome):
+    def getsaldo(self, id):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.nome == nome:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                return self.dicionario[cliente]
+                return valor.saldo
         if p != 1:
             print("Cliente não encontrado")
 
-    def depósito(self, nome, x):
+    def depósito(self, id, x):
         p = 0
-        for cliente in self.dicionario:
-            if cliente.nome == nome:
+        for chave, valor in self.dicionario:
+            if chave == id:
                 p = 1
-                self.dicionario[cliente] = self.dicionario[cliente] + x
-                print(f"O Valor do saldo atual é de: R${self.dicionario[cliente]}")
+                valor.saldo = valor.saldo + x
+                print(f"O Valor do saldo atual é de: R${valor.saldo}")
                 break
         if p != 1:
             print("Cliente não encontrado")
