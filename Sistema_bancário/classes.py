@@ -5,7 +5,6 @@ class Clientes:
         self.rg = rg
         self.cep = cep
         self.saldo = saldo
-    
 
 class Banco_Brasil:
 
@@ -92,7 +91,6 @@ class Banco_Brasil:
         if p != 1:
             print("Cliente não encontrado")
 
-
     def getsaldo(self, id):
         p = 0
         for chave, valor in self.dicionario:
@@ -113,40 +111,40 @@ class Banco_Brasil:
         if p != 1:
             print("Cliente não encontrado")
 
-    def saque(self,nome, x):
-        p = 0
-        for cliente in self.dicionario:
-            if cliente.nome == nome:
-                p = 1
-                if self.dicionario[cliente] >= 0 and x <= self.dicionario[cliente]:    
-                    self.dicionario[cliente] = self.dicionario[cliente] - x
-                    print(f"O Valor do saldo atual é de: R${self.dicionario[cliente]}, você sacou {x}")
-                    break
-                else:
-                    print("Saldo insuficiente")                
-        if p != 1:
-            print("Cliente não encontrado")
+    # def saque(self,nome, x):
+    #     p = 0
+    #     for cliente in self.dicionario:
+    #         if cliente.nome == nome:
+    #             p = 1
+    #             if self.dicionario[cliente] >= 0 and x <= self.dicionario[cliente]:    
+    #                 self.dicionario[cliente] = self.dicionario[cliente] - x
+    #                 print(f"O Valor do saldo atual é de: R${self.dicionario[cliente]}, você sacou {x}")
+    #                 break
+    #             else:
+    #                 print("Saldo insuficiente")                
+    #     if p != 1:
+    #         print("Cliente não encontrado")
         
-    def transferencia(self, nome, nome_t , x):
-        p = 0
-        for cliente in self.dicionario:
-            if cliente == nome:
-                p = 1
-                if self.dicionario[cliente] >= 0 and x <= self.dicionario[cliente]:    
-                    self.dicionario[cliente] = self.dicionario[cliente] - x
-                    q = 0
-                    for cliente in self.dicionario:
-                        if cliente == nome_t:
-                            q = 1
-                            self.dicionario[cliente] = self.dicionario[cliente] + x
-                            print("O valor foi transferido")
-                    if q != 1:
-                        self.dicionario[cliente] = self.dicionario[cliente] + x
-                        print("cliente não encontrado")
-                else:
-                    print("Saldo insuficiente")      
-        if p != 1:
-            print("Cliente não encontrado")  
+    # def transferencia(self, nome, nome_t , x):
+    #     p = 0
+    #     for cliente in self.dicionario:
+    #         if cliente == nome:
+    #             p = 1
+    #             if self.dicionario[cliente] >= 0 and x <= self.dicionario[cliente]:    
+    #                 self.dicionario[cliente] = self.dicionario[cliente] - x
+    #                 q = 0
+    #                 for cliente in self.dicionario:
+    #                     if cliente == nome_t:
+    #                         q = 1
+    #                         self.dicionario[cliente] = self.dicionario[cliente] + x
+    #                         print("O valor foi transferido")
+    #                 if q != 1:
+    #                     self.dicionario[cliente] = self.dicionario[cliente] + x
+    #                     print("cliente não encontrado")
+    #             else:
+    #                 print("Saldo insuficiente")      
+    #     if p != 1:
+    #         print("Cliente não encontrado")  
 
 
     
