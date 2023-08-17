@@ -28,13 +28,13 @@ def Main():
                         print("Essa é a área de SAQUE")
                         banco = Banco_Brasil()
                         valor = float(input("Digite o valor que deseja sacar: "))
-                        banco.transferencia(valor)
+                        banco.saque(valor)
                     
                     elif função == 3:
                         print("Essa é a área de DEPÓSITO")
                         banco = Banco_Brasil()
                         valor = float(input("Digite o valor que deseja depositar: "))
-                        banco.transferencia(valor)
+                        banco.depósito(valor)
 
                     else:
                         print("A opção não existe")
@@ -53,7 +53,7 @@ def Main():
                         rg = int("RG: ")
                         cep = int("CEP: ")
                         saldo = 0
-                        banco.excluir_clientes(nome, rg, cep, saldo)
+                        banco.adicionar_clientes(nome, rg, cep, saldo)
                     
                     elif função == 2:
                         print("Essa é a área de EXCLUIR CONTA")
