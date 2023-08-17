@@ -34,11 +34,16 @@ class Banco_Brasil:
         if p != 1:
             print("Cliente não encontrado")
 
-    def getatualizar(self, nome, rg, cep):
+    def getnome(self, nome):
         for cliente in self.dicionario:
             if cliente.nome == nome:
                 cliente
     
+    def setnome(self,nome):
+        
+        
+    
+
 
     
 
