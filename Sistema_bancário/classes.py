@@ -13,7 +13,7 @@ class Banco_Brasil:
         
     def adicionar_clientes(self, nome, rg, cep, saldo):
         cliente = Clientes(nome, rg, cep, saldo)
-        id = random.randint(100,500)
+        id = random.randint(1000,5000)
         self.dicionario[id] = cliente
         print (f"{nome} adicionado, o id é {id}")
         
