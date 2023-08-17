@@ -22,6 +22,7 @@ class Banco_Brasil:
     def adicionar_clientes(self, nome, rg, cep, saldo):
         cliente = Clientes(nome, rg, cep)
         self.dicionario[cliente] = saldo
+        print (f"{nome} adicionado")
         
     def excluir_clientes(self, nome):
         p = 0
@@ -29,6 +30,7 @@ class Banco_Brasil:
             if cliente.nome == nome:
                 p = 1
                 self.dicionario.pop(cliente)
+                print(f"{cliente.nome} excluido")
                 break
             
         if p != 1:
@@ -49,6 +51,8 @@ class Banco_Brasil:
             if cliente.nome == nome:
                 p = 1
                 cliente.nome = x
+                print(f"O nome novo é {cliente.nome}")
+                break
         if p != 1:
             print("Cliente não encontrado")
         
@@ -68,6 +72,8 @@ class Banco_Brasil:
             if cliente.rg == rg:
                 p = 1
                 cliente.rg = x
+                print(f"O RG novo é {cliente.rg}")
+                break
         if p != 1:
             print("Cliente não encontrado")
 
@@ -87,6 +93,8 @@ class Banco_Brasil:
             if cliente.cep == cep:
                 p = 1
                 cliente.cep = x
+                print(f"O CEP novo é {cliente.cep}")
+                break
         if p != 1:
             print("Cliente não encontrado")
 
