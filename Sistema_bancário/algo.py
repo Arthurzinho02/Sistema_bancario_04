@@ -50,7 +50,7 @@ def Main():
                         rg = int(input("RG: "))
                         cep = int(input("CEP: "))
                         saldo = 0
-                        banco.excluir_clientes(nome, rg, cep, saldo)
+                        banco.adicionar_clientes(nome, rg, cep, saldo)
                     
                     elif função == "2":
                         print("Essa é a área de EXCLUIR CONTA")
