@@ -59,7 +59,7 @@ def Main():
                     
                     elif função == "3":
                         print("Essa é a área de ATUALIZAR DADOS")
-                        conta = int(input("Qual conta você deseja atualizar? "))
+                        conta = input("Qual conta você deseja atualizar? ")
                         banco.atualizar(conta)
 
                     else:
@@ -72,3 +72,4 @@ def Main():
         except Exception as erro:
             print("Valor invalido")
             print(erro.__class__.__name__)
+            
