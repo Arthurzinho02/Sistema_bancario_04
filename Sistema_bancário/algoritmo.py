@@ -11,6 +11,12 @@ def adc_cliente():
     adc.adicionar_clientes(adc_n, adc_rg, adc_cep, adc_saldo)
 
 
+def exc_c():
+    excluir = Banco_Brasil()
+    nome = input("Digite o nome do cliente que deseja excuir dos dados bancários")
+    excluir.excluir_clientes(nome)
+    
+
 # def main ():
 
 #     while True:
