@@ -18,18 +18,18 @@ def Main():
                     função = input("O que você deseja fazer? ")
                     os.system("cls")
 
-                    if função == 1:
+                    if função == "1":
                         print("Essa é a área de TRANSFERÊNCIA")
                         destinatário = input("Digite o nome do destinário que você deseja enviar o valor: ")
                         valor = float(input("Digite o valor que deseja transferir: "))
                         banco.transferencia(destinatário, valor)
                     
-                    elif função == 2:
+                    elif função == "2":
                         print("Essa é a área de SAQUE")
                         valor = float(input("Digite o valor que deseja sacar: "))
                         banco.saque(valor)
                     
-                    elif função == 3:
+                    elif função == "3":
                         print("Essa é a área de DEPÓSITO")
                         valor = float(input("Digite o valor que deseja depositar: "))
                         banco.depósito(valor)
@@ -44,7 +44,7 @@ def Main():
                     função = input("O que você deseja fazer? ")
                     os.system("cls")
 
-                    if função == 1:
+                    if função == "1":
                         print("Essa é a área de CRIAR CONTA")
                         nome = input("Nome do usuário: ")
                         rg = int("RG: ")
@@ -52,12 +52,12 @@ def Main():
                         saldo = 0
                         banco.excluir_clientes(nome, rg, cep, saldo)
                     
-                    elif função == 2:
+                    elif função == "2":
                         print("Essa é a área de EXCLUIR CONTA")
                         conta = input("Qual conta você deseja excluir? ")
                         banco.excluir_clientes(conta)
                     
-                    elif função == 3:
+                    elif função == "3":
                         print("Essa é a área de ATUALIZAR DADOS")
                         conta = input("Qual conta você deseja atualizar? ")
                         banco.atualizar(conta)
