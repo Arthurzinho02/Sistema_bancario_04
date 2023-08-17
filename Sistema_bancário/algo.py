@@ -2,6 +2,7 @@ from classes import *
 import os
 
 def Main():
+    banco = Banco_Brasil()
     while True:
         try:
             print("Você está no banco do Brasil!")
@@ -19,20 +20,17 @@ def Main():
 
                     if função == 1:
                         print("Essa é a área de TRANSFERÊNCIA")
-                        banco = Banco_Brasil()
                         destinatário = input("Digite o nome do destinário que você deseja enviar o valor: ")
                         valor = float(input("Digite o valor que deseja transferir: "))
                         banco.transferencia(destinatário, valor)
                     
                     elif função == 2:
                         print("Essa é a área de SAQUE")
-                        banco = Banco_Brasil()
                         valor = float(input("Digite o valor que deseja sacar: "))
                         banco.saque(valor)
                     
                     elif função == 3:
                         print("Essa é a área de DEPÓSITO")
-                        banco = Banco_Brasil()
                         valor = float(input("Digite o valor que deseja depositar: "))
                         banco.depósito(valor)
 
@@ -48,7 +46,6 @@ def Main():
 
                     if função == 1:
                         print("Essa é a área de CRIAR CONTA")
-                        banco = Banco_Brasil()
                         nome = input("Nome do usuário: ")
                         rg = int("RG: ")
                         cep = int("CEP: ")
@@ -57,13 +54,11 @@ def Main():
                     
                     elif função == 2:
                         print("Essa é a área de EXCLUIR CONTA")
-                        banco = Banco_Brasil()
                         conta = input("Qual conta você deseja excluir? ")
                         banco.excluir_clientes(conta)
                     
                     elif função == 3:
                         print("Essa é a área de ATUALIZAR DADOS")
-                        banco = Banco_Brasil()
                         conta = input("Qual conta você deseja atualizar? ")
                         banco.atualizar(conta)
 
