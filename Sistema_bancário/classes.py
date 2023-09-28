@@ -1,6 +1,5 @@
-import random
 class Clientes:
-    def __init__ (self, nome, rg, cep, saldo):
+    def __init__ (self, nome, rg, cep, saldo=0):
         self.nome = nome
         self.rg = rg
         self.cep = cep
@@ -11,9 +10,8 @@ class Banco_Brasil:
     def __init__(self):
         self.dicionario = {}
         
-    def adicionar_clientes(self, nome, rg, cep, saldo):
+    def adicionar_clientes(self, nome, rg, cep, id, saldo=0):
         cliente = Clientes(nome, rg, cep, saldo)
-        id = random.randint(1000,5000)
         self.dicionario[id] = cliente
         print (f"{nome} adicionado, o id é {id}")
         
