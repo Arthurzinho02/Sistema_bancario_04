@@ -69,7 +69,7 @@ def Main():
                         case 1:
                             while True:
                                 print(f"===Bem vindo {nome_A}===")
-                                print("1. Criar Cliente \n2. Listar Clientes \n3. Excluir Cliente \n4. Atualizar Dados \n5. Criar ADM \n6. Listar \n7. Excluir ADM \n8. Sair")
+                                print("1. Criar Cliente \n2. Listar Clientes \n3. Excluir Cliente \n4. Atualizar Dados \n5. Criar ADM \n6. Listar ADMs \n7. Excluir ADM \n8. Sair")
                                 função = int(input("O que você deseja fazer? "))
                                 os.system("cls")
                                 match função:
@@ -99,36 +99,39 @@ def Main():
                                         os.system("cls")
                                     
                                     case 4:
-                                        print("===ATUALIZAR DADOS=== \nO que você deseja atualizar? \n1 - Nome \n2 - RG \n3 - CEP")
-                                        conta = input("Qual item você deseja atualizar? ")
+                                        print("===ATUALIZAR DADOS===")
+                                        id_M = int(input("Informe o id do cliente: "))
+                                        print("O que você deseja atualizar? \n1 - Nome \n2 - RG \n3 - CEP")
+                                        conta = int(input("Qual item você deseja atualizar? "))
                                         os.system("pause")
                                         os.system("cls")
 
                                         match conta:
 
                                             case 1:
-                                                nome_N = input("Digite um novo nome").upper
-                                                banco.setnome(conta, nome_N)
+                                                nome_NU = input("Digite um novo nome: ")
+                                                nome_N = nome_NU.upper()
+                                                banco.setnome(id_M, nome_N)
                                                 print("Novo nome registrado")
                                                 os.system("pause")
                                                 os.system("cls")
 
                                             case 2:
-                                                rg_N = input("Digite um novo RG")
-                                                banco.setrg(conta, rg_N)
+                                                rg_N = input("Digite um novo RG: ")
+                                                banco.setrg(id_M, rg_N)
                                                 print("Novo RG registrado")
                                                 os.system("pause")
                                                 os.system("cls")
 
                                             case 3:
-                                                cep_N = input("Digite um novo cep")
-                                                banco.setcep(conta, cep_N)
+                                                cep_N = input("Digite um novo cep: ")
+                                                banco.setcep(id_M, cep_N)
                                                 print("Novo CEP registrado")
                                                 os.system("pause")
                                                 os.system("cls")
                                             
                                             case _:
-                                                print("A opção não existe")
+                                                print("A opção não existe: ")
                                                 os.system("pause")
                                                 os.system("cls")
 
@@ -175,4 +178,5 @@ def Main():
         except Exception as erro:
             print("Valor invalido")
             print(erro.__class__.__name__)
-            
+            os.system("pause")
+            os.system("cls")
