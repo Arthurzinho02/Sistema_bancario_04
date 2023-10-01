@@ -33,88 +33,87 @@ class Clientes:
 class Banco_Brasil:
 
     def __init__(self):
-        self.dicionario = {}
-        self.ADM = ADM("MASTER", 123)
+        self.clientes = {}
+        self.ADM = Admin("MASTER", 123)
         self.listaAdm = [self.ADM]
         
 
-    def listarAdms(self):
+    def ListarAdms(self):
         cont = 0
         for i in self.listaAdm:
             cont += 1
             print(f"{cont}- Nome: {i.getNomeA()}")
     
-    def excluiradms(self, vetor):
+    def ExcluirAdms(self, vetor):
         self.listaAdm.pop(vetor - 1)
 
-    def adicionarAdm(self, nome, senha):
-        adm = ADM(nome, senha)
+    def AdicionarAdms(self, nome, senha):
+        adm = Admin(nome, senha)
         self.listaAdm.append(adm)
 
-    def LoginAdm(self, nome, senha):
+    def LoginAdms(self, nome, senha):
         for i in self.listaAdm:
             if i.getNomeA() == nome and i.getSenhaA() == senha:
                 return 1          
-        
 
-    def loginCliente(self, id, nome):
-        for chave, valor in self.dicionario.items():
+    def LoginCliente(self, id, nome):
+        for chave, valor in self.clientes.items():
             if chave == id and valor.getNome() == nome:
                 return 1
         
     def getCliente(self, id):
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 valor.getSaldo()
 
 
-    def adicionar_clientes(self, nome, rg, cep, id):
+    def CadastrarClientes(self, nome, rg, cep, id):
         saldo = 0
         cliente = Clientes(nome, rg, cep, saldo)
-        self.dicionario[id] = cliente
-        print (f"{nome} adicionado, o id é {id}")
+        self.clientes[id] = cliente
+        print (f"{nome} adicionado, o ID é {id}.")
 
 
-    def listarClientes(self):
+    def ListarClientes(self):
         cont = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             cont += 1
-            print(f"{cont}- Nome: {valor.getNome()} | Id: {chave} | RG: {valor.getRg()} | CEP: {valor.getCep()} ")
+            print(f"{cont}- Nome: {valor.getNome()} | ID: {chave} | RG: {valor.getRg()} | CEP: {valor.getCep()} ")
         
-    def excluir_clientes(self, id):
+    def ExcluirClientes(self, id):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
-                print(f"{valor.getNome()} excluido")
-                self.dicionario.pop(chave)
+                print(f"{valor.getNome()} excluído.")
+                self.clientes.pop(chave)
                 break            
         if p != 1:
-            print("Cliente não encontrado")
+            print("Cliente não encontrado.")
 
-    def getnome(self, id):
+    def getNome(self, id):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 return valor.getNome()
         if p != 1:
-            print("Cliente não encontrado")
+            print("Cliente não encontrado.")
     
-    def setnome(self, id, x):
+    def setNome(self, id, x):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 valor.setNome(x)
-                print(f"O nome novo é {valor.getNome()}")
+                print(f"O nome novo é {valor.getNome()}.")
                 break
         if p != 1:
-            print("Cliente não encontrado")
+            print("Cliente não encontrado.")
         
-    def getrg(self, id):
+    def getRG(self, id):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 return valor.getRg()
@@ -122,50 +121,50 @@ class Banco_Brasil:
             print("Cliente não encontrado")
 
 
-    def setrg(self, id, x):
+    def setRG(self, id, x):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 valor.setRg(x)
                 print(f"O RG novo é {valor.getRg()}")
                 break
         if p != 1:
-            print("Cliente não encontrado")
+            print("Cliente não encontrado.")
 
-    def getcep(self, id):
+    def getCEP(self, id):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 return valor.getCep()
         if p != 1:
-            print("Cliente não encontrado")
+            print("Cliente não encontrado.")
 
 
-    def setcep(self, id, x):
+    def setCEP(self, id, x):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 valor.setCep(x)
                 print(f"O CEP novo é {valor.getCep()}")
                 break
         if p != 1:
-            print("Cliente não encontrado")
+            print("Cliente não encontrado.")
 
-    def getsaldo(self, id):
+    def getSaldo(self, id):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 return valor.getSaldo()
         if p != 1:
-            print("Cliente não encontrado")
+            print("Cliente não encontrado.")
 
-    def depósito(self, id, x):
+    def Depósito(self, id, x):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 x = valor.getSaldo() + x
@@ -175,9 +174,9 @@ class Banco_Brasil:
         if p != 1:
             print("Cliente não encontrado")
 
-    def saque(self,id, x):
+    def Saque(self,id, x):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 if valor.getSaldo() >= 0 and x <= valor.getSaldo():    
@@ -190,16 +189,16 @@ class Banco_Brasil:
         if p != 1:
             print("Cliente não encontrado")
         
-    def transferencia(self, id, id_t , x):
+    def Transferência(self, id, id_t , x):
         p = 0
-        for chave, valor in self.dicionario.items():
+        for chave, valor in self.clientes.items():
             if chave == id:
                 p = 1
                 if valor.getSaldo() >= 0 and x <= valor.getSaldo():    
                     x1 = valor.getSaldo() - x
                     valor.setSaldo(x1)
                     q = 0
-                    for chave, valor in self.dicionario.items():
+                    for chave, valor in self.clientes.items():
                         if chave == id_t:
                             q = 1
                             x1 = valor.getSaldo() + x
@@ -214,7 +213,7 @@ class Banco_Brasil:
         if p != 1:
             print("Cliente não encontrado")  
 
-class ADM:
+class Admin:
     def __init__(self, nome, senha):
         self.nome = nome
         self.senha = senha
@@ -224,12 +223,3 @@ class ADM:
     
     def getSenhaA(self):
         return self.senha
-
-
-    
-
-
-    
-
-
-
